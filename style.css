@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    width: 400px;
+    margin: 3% auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items:center; */
+}
+.wrapper button,
+.root input {
+    height: 25px;
+}
+.wrapper button {
+    margin-left: 3%;
+}
+.root input {
+    background: #cef0ee;
+    border: 1px solid #726a3b;
+    border-radius: 3%;
+}
+.root input::placeholder {
+    color: #454545;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 3px;
+    background: #d0c99f;
+}
+
+.task_block {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 2px;
+    border-bottom: 0.5px solid #000;
+}
+.task_block:last-of-type {
+    border-bottom: none;
+}
+
+
+.del_icon {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #a40000;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#line1 {
+    width: 100%;
+    border: 1px solid #a40000;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#line2 {
+    width: 100%;
+    border: 1px solid #a40000;
+    position: absolute;
+    transform: rotate(135deg);
+}
+
+.added_task { 
+	animation-name: add; 	
+    animation-duration: 0.5s;
+    position: relative;
+} 
+
+@keyframes add { 
+	0% {opacity: 0; top: -10px; transform: rotate(5deg)}
+    50% {opacity:0.5; top: 10px; transform: rotate(-3deg)}
+	100% {opacity: 1; top: 0}
+}
+
+.deleted_task { 
+	animation-name: del; 	
+    animation-duration: 0.5s;
+} 
+
+@keyframes del { 
+	0% {opacity: 0; transform: scale(1)}
+	100% {opacity: 1; transform: scale(0)}
+}
